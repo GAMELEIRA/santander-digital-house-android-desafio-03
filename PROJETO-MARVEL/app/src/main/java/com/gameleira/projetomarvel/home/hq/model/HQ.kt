@@ -2,7 +2,7 @@ package com.gameleira.projetomarvel.home.hq.model
 
 import java.util.*
 
-data class Comic (
+data class HQ (
     val id: Int,
     val thumbnail: Image,
     val title: String,
