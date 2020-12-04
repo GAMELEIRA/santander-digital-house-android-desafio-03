@@ -20,6 +20,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.gameleira.projetomarvel.R
+import com.gameleira.projetomarvel.home.hq.model.HQ
+import com.gameleira.projetomarvel.home.hqDetails.repository.HQDetailsRepository
+import com.gameleira.projetomarvel.home.hqDetails.viewModel.HQDetailsViewModel
 import java.text.SimpleDateFormat
 
 class HQDetailsFragment : Fragment() {
@@ -56,8 +59,8 @@ class HQDetailsFragment : Fragment() {
 
         _viewModel = ViewModelProvider(
             this,
-            ComicDetailsViewModel.ComicDetailsViewModelFactory(ComicDetailsRepository())
-        ).get(ComicDetailsViewModel::class.java)
+            HQDetailsViewModel.HQDetailsViewModelFactory(HQDetailsRepository())
+        ).get(HQDetailsViewModel::class.java)
 
         _viewModel.getComicDetails(id).observe(viewLifecycleOwner, {
             loadInfo(it)
@@ -86,7 +89,7 @@ class HQDetailsFragment : Fragment() {
         }
     }
 
-    private fun loadInfo(comic: ComicModel) {
+    private fun loadInfo(comic: HQ) {
 
         val txtTitle = _myView.findViewById<TextView>(R.id.txtTitle_comicDetailsFragment)
         val txtDescricao = _myView.findViewById<TextView>(R.id.txtDetails_comicDetailsFragment)
@@ -95,26 +98,26 @@ class HQDetailsFragment : Fragment() {
         val txtPages = _myView.findViewById<TextView>(R.id.txtPagesValue_comicDetailsFragment)
         val imgComic = _myView.findViewById<ImageView>(R.id.imgComic_comicDetailsFragment)
 
-        txtTitle.text = comic.titulo
+        txtTitle.text = comic.title
 
-        if(comic.descricao != null) {
+        if(comic.description != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                txtDescricao.text = Html.fromHtml(comic.descricao , Html.FROM_HTML_MODE_COMPACT);
+                txtDescricao.text = Html.fromHtml(comic.description , Html.FROM_HTML_MODE_COMPACT);
             } else {
-                txtDescricao.text = Html.fromHtml(comic.descricao );
+                txtDescricao.text = Html.fromHtml(comic.description );
             }
         }
 
 
 
-        txtData.text = comic.datas?.get(0)?.let { getDateTime(it.date) }
+        txtData.text = comic.dates?.get(0)?.let { getDateTime(it.date) }
 
-        val precoString = "$ ${comic.precos?.get(0)?.price.toString()}"
+        val precoString = "$ ${comic.prices?.get(0)?.price.toString()}"
         txtPreco.text = precoString
 
-        txtPages.text = comic.paginas.toString()
+        txtPages.text = comic.pageCount.toString()
 
-        comic.img?.let {
+        comic.thumbnail?.let {
             comicThumbUrl = it.path + "." + it.extension
 
             Glide.with(_myView.context)

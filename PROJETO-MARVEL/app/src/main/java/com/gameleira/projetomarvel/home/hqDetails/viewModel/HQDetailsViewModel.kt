@@ -14,12 +14,12 @@ class HQDetailsViewModel(
 
     fun getComicDetails(id: Int) = liveData(Dispatchers.IO) {
         val response = repository.getHQDetails(id)
-        comicDetails = response.data.results[0]
-        emit(response.data.results[0])
+        comicDetails = response.data.res[0]
+        emit(response.data.res[0])
     }
 
     @Suppress("UNCHECKED_CAST")
-    class ComicDetailsViewModelFactory(
+    class HQDetailsViewModelFactory(
         private val repository: HQDetailsRepository
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
