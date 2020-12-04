@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">ProjetoMarvel</string>
+    <string name="plano_de_fundo_tela_inicial">Plano de fundo - Tela inicial</string>
+    <string name="logo_da_marvel">Logo da Marvel</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="welcome_to_the_marvel_hq_s">Welcome to the Marvel HQs</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember">Remember</string>
+    <string name="log_in">Log In</string>
+    <string name="create_account">Create Account</string>
+    <string name="register">Register</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="save">Save</string>
+    <string name="name">Name</string>
+    <string name="foto_da_comic">Foto da comic</string>
+    <string name="marvel">Marvel</string>
+    <string name="folder_comic_details">Folder - Comic details</string>
+    <string name="published">Published</string>
+    <string name="price">Price</string>
+    <string name="pages">Pages</string>
+    <string name="back_button">Back Button</string>
+    <string name="issue_number">Ola %1$s</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intent_comic_id">COMIC_ID</string>
+    <string name="img_url">IMG_URL</string>
 </resources>

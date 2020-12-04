@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_comic_details"
+    app:startDestination="@id/comicDetailsFragment">
+    <fragment
+        android:id="@+id/comicDetailsFragment"
+        android:name="com.gabrielcamargo.marvelwebservice.comicdetails.view.ComicDetailsFragment"
+        android:label="comic_details_fragment"
+        tools:layout="@layout/fragment_comic_details" >
+        <action
+            android:id="@+id/action_comicDetailsFragment_to_comicDetailsFolderFragment"
+            app:destination="@id/comicDetailsFolderFragment"
+            app:popUpTo="@+id/navigation_comic_details"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/comicDetailsFolderFragment"
+        android:name="com.gabrielcamargo.marvelwebservice.comicdetails.comicfolder.view.ComicDetailsFolderFragment"
+        android:label="comic_details_folder_fragment"
+        tools:layout="@layout/fragment_comic_details_folder" >
+        <action
+            android:id="@+id/action_comicDetailsFolderFragment_to_comicDetailsFragment2"
+            app:destination="@id/comicDetailsFragment"
+            app:popUpTo="@+id/navigation_comic_details"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+</navigation>
