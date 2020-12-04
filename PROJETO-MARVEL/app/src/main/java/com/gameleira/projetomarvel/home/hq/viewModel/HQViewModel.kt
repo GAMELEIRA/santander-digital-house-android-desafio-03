@@ -2,11 +2,9 @@ package com.gameleira.projetomarvel.home.hq.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.liveData
 import com.gameleira.projetomarvel.home.hq.model.HQ
 import com.gameleira.projetomarvel.home.hq.repository.HQRepository
 import kotlinx.coroutines.Dispatchers
-
 
 class HQViewModel(
     private val repository: HQRepository
