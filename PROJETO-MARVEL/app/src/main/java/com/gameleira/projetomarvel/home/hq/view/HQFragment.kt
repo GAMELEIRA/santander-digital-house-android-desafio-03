@@ -10,7 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gameleira.projetomarvel.R
+import com.gameleira.projetomarvel.home.hq.model.HQ
 import com.gameleira.projetomarvel.home.hq.repository.HQRepository
+import com.gameleira.projetomarvel.home.hq.viewModel.HQViewModel
+import com.gameleira.projetomarvel.home.hqDetails.view.HQDetailsActivity
 
 class HQFragment  : Fragment() {
 
@@ -18,7 +21,7 @@ class HQFragment  : Fragment() {
         fun newInstance() = HQFragment()
     }
 
-    private lateinit var _viewModel: HQViewHolder
+    private lateinit var _viewModel: HQViewModel
     private lateinit var _myView: View
 
     override fun onCreateView(
@@ -34,19 +37,19 @@ class HQFragment  : Fragment() {
 
         _viewModel = ViewModelProvider(
             this,
-            ComicViewModel.ComicViewModelFactory(HQRepository())
-        ).get(ComicViewModel::class.java)
+            HQViewModel.HQViewModelFactory(HQRepository())
+        ).get(HQViewModel::class.java)
 
-        _viewModel.getComics().observe(viewLifecycleOwner, {
+        _viewModel.getHQs().observe(viewLifecycleOwner, {
             createList(it)
         })
     }
 
-    private fun createList(comics: List<ComicModel>) {
+    private fun createList(comics: List<HQ>) {
         val viewManager = GridLayoutManager(_myView.context, 3)
         val recyclerView = _myView.findViewById<RecyclerView>(R.id.recyclerView_comicFragment)
-        val viewAdapter = HqA(comics) {
-            val intent = Intent(activity, ComicDetailsActivity::class.java)
+        val viewAdapter = HqAdpater(comics) {
+            val intent = Intent(activity, HQDetailsActivity::class.java)
             intent.putExtra(getString(R.string.intent_comic_id), it.id)
             startActivity(intent)
         }

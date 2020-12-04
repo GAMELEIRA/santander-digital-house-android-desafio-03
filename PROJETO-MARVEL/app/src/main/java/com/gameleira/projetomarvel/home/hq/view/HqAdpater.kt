@@ -6,8 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gameleira.projetomarvel.R
 import com.gameleira.projetomarvel.home.hq.model.HQ
 
-
-class jiraComicAdapter(
+class HqAdpater(
     private val dataSet: List<HQ>,
     private val clickListener: (HQ) -> Unit
 ): RecyclerView.Adapter<HQViewHolder>() {
@@ -15,8 +14,7 @@ class jiraComicAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HQViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_comic_card, parent, false)
-
-        return HQViewHolder(view);
+        return HQViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: HQViewHolder, position: Int) {

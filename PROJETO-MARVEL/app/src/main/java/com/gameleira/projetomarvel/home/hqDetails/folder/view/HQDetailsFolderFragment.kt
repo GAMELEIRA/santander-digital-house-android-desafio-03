@@ -13,6 +13,7 @@ import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.gameleira.projetomarvel.home.hqDetails.folder.viewModel.HQDetailsFolderViewModel
 
 class HQDetailsFolderFragment : Fragment() {
 
@@ -20,7 +21,7 @@ class HQDetailsFolderFragment : Fragment() {
         fun newInstance() = HQDetailsFolderFragment();
     }
 
-    private lateinit var viewModel: ComicDetailsFolderViewModel
+    private lateinit var viewModel: HQDetailsFolderViewModel
     private lateinit var _myView: View
     private lateinit var _navController: NavController
 
@@ -28,14 +29,14 @@ class HQDetailsFolderFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _myView =  inflater.inflate(R.layout.fragment_comic_details_folder, container, false)
+        _myView =  inflater.inflate(R.layout.fragment_h_q_details_folder, container, false)
         return _myView
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(ComicDetailsFolderViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HQDetailsFolderViewModel::class.java)
         _navController = Navigation.findNavController(_myView)
 
         val btnClose = _myView.findViewById<ImageView>(R.id.closeButton_comicDetailsFolderFragment)
