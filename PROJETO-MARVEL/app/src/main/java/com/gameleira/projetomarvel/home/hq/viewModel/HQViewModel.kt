@@ -16,8 +16,8 @@ class HQViewModel(
 
     fun getHQs() = liveData(Dispatchers.IO) {
         val response = repository.getHQs();
-        hq = response.data.results;
-        emit(response.data.results);
+        hq = response.res;
+        emit(response.res);
     }
 
     @Suppress("UNCHECKED_CAST")

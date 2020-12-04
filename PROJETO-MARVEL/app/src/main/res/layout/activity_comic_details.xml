@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container_comicDetailsActivity"
     android:name="androidx.navigation.fragment.NavHostFragment"
-    app:navGraph="@navigation/navigation_comic_details"
+    app:navGraph="@navigation/navigation_hq_details"
     app:defaultNavHost="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".comicdetails.view.ComicDetailsActivity" />
+    tools:context=".comicdetails.view.HQDetailsActivity" />

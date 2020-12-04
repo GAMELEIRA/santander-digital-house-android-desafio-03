@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.gameleira.projetomarvel.home.hq.view.HqActivity
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,9 +15,9 @@ class SignUpActivity : AppCompatActivity() {
         actionbar!!.title = getString(R.string.register)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
-        val btnSave = findViewById<Button>(R.id.btnSave_signUpActivity )
+        val btnSave = findViewById<Button>(R.id.btnSave_signUpActivity)
         btnSave.setOnClickListener{
-            val intent = Intent(this, ComicActivity::class.java)
+            val intent = Intent(this, HqActivity::class.java)
             startActivity(intent)
             finish()
         }
