@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gameleira.projetomarvel.R
-import com.gameleira.projetomarvel.home.hq.model.HQ
 import com.gameleira.projetomarvel.home.hq.repository.HQRepository
 
 class HQFragment  : Fragment() {

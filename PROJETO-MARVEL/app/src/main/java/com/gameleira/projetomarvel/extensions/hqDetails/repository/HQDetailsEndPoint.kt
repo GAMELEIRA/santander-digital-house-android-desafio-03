@@ -1,6 +1,5 @@
-package com.gameleira.projetomarvel.home.hq.hqDetails.repository
+package com.gameleira.projetomarvel.extensions.hqDetails.repository
 
-import com.gameleira.projetomarvel.network.Network
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

@@ -7,5 +7,5 @@ import com.gameleira.projetomarvel.network.Network.Companion.getHash
 class HQRepository {
     private val client = HQEndPoint.endpoint
 
-    suspend fun getComics() = client.get(getTimeStamp(), getHash(), PUBLIC_KEY_MARVEL)
+    suspend fun getHQs() = client.get(getTimeStamp(), getHash(), PUBLIC_KEY_MARVEL)
 }

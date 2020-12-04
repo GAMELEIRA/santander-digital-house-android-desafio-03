@@ -1,7 +1,5 @@
 package com.gameleira.projetomarvel.home.hq.model
 
-import java.util.*
-
 data class HQ (
     val id: Int,
     val thumbnail: Image,
